@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-chubby/css/uicons-solid-chubby.css'>
+</head>
+
+<body class="bg-gray-900 text-gray-100 h-screen flex">
+
+  <!-- Side Bar -->
+  <div class="w-24 bg-gray-800 flex flex-col justify-between items-center py-6 rounded-lg">
+    <div class="grid grid-rows-1 gap-8 mb-6">
+      <a href="Main.html" class="text-gray-400 hover:text-white text-center"><i
+          class="fi fi-sc-cloud-sun text-2xl text-blue-400"></i><br>Weather</a>
+      <a href="Favorite.html" class="text-gray-400 hover:text-white  text-center"><i
+          class="fi fi-sr-heart text-2xl text-red-400"></i><br>Favorite</a>
+      <a href="Setting.html" class="text-gray-400 hover:text-white  text-center"><i class="fi fi-sc-settings text-2xl"></i><br>Setting</a>
+    </div>
+    <i class="fi fi-sr-user bg-gray-600 py-2 px-3 rounded-full"></i>
+  </div>
+
+  <main class="flex-1 p-6 grid grid-cols-4 gap-6 ">
+
+    <div class="col-span-3 flex flex-col">
+      <!-- Search -->
+      <div>
+        <input type="text" placeholder="Search"
+          class="w-full px-4 py-2 rounded-lg bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <section class="space-y-4 grid grid-cols-1 flex-1">
+
+        <div class="p-6 rounded-xl flex items-center justify-between">
+          <div class="space-y-2">
+            <div class="flex items-center gap-4">
+              <!-- City + Fav -->
+              <h1 class="text-5xl font-bold">Bangkok</h1>
+              <button class="hover:text-red-400 flex items-center mt-4">
+                <i class="fi fi-rr-heart text-2xl"></i>
+                <!-- <i class="fi fi-sr-heart text-2xl text-red-400"></i> -->
+              </button>
+
+            </div>
+            <!-- ปริมาณน้ำฝน -->
+            <p class="text-gray-400">chance of rain: 0%</p>
+            <!-- Temp -->
+            <p class="text-5xl pt-6">33°</p>
+          </div>
+          <!-- Change Weather -->
+          <div class="text-6xl">🌤️</div>
+        </div>
+
+        <!-- Today's Forecast -->
+        <div class="bg-gray-800 p-4 pb-6 rounded-xl flex flex-col">
+          <h2 class="font-semibold mb-4">TODAY'S FORECAST</h2>
+          <div class="grid grid-cols-6 gap-4 text-center flex-1">
+            <!-- ใช้ Loop [Time, Pic, Temp] -->
+            <div class="flex flex-col items-center justify-center gap-1">
+              <p>6:00 AM</p>
+              <span class="text-3xl">⛅</span>
+              <p>25°</p>
+            </div>
+            <div class="flex flex-col items-center justify-center gap-1">
+              <p>9:00 AM</p>
+              <span class="text-3xl">⛅</span>
+              <p>28°</p>
+            </div>
+            <div class="flex flex-col items-center justify-center gap-1">
+              <p>12:00 PM</p>
+              <span class="text-3xl">☀️</span>
+              <p>33°</p>
+            </div>
+            <div class="flex flex-col items-center justify-center gap-1">
+              <p>3:00 PM</p>
+              <span class="text-3xl">☀️</span>
+              <p>34°</p>
+            </div>
+            <div class="flex flex-col items-center justify-center gap-1">
+              <p>6:00 PM</p>
+              <span class="text-3xl">☀️</span>
+              <p>32°</p>
+            </div>
+            <div class="flex flex-col items-center justify-center gap-1">
+              <p>9:00 PM</p>
+              <span class="text-3xl">⛅</span>
+              <p>30°</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Air Conditions -->
+        <div class="bg-gray-800 p-4 pb-6 rounded-xl space-y-2">
+          <h2 class="font-semibold">AIR CONDITIONS</h2>
+          <div class="grid grid-cols-4 gap-4 text-center">
+            <div>
+              <p class="text-gray-400">Real Feel <i class="fi fi-rr-temperature-high"></i> </p>
+              <p class="text-2xl font-bold">30°</p>
+            </div>
+            <div>
+              <p class="text-gray-400">Wind <i class="fi fi-rr-wind"></i></p>
+              <p class="text-2xl font-bold">0.2 km/h</p>
+            </div>
+            <div>
+              <p class="text-gray-400">Chance of rain <i class="fi fi-rr-cloud-showers-heavy"></i></p>
+              <p class="text-2xl font-bold">0%</p>
+            </div>
+            <div>
+              <p class="text-gray-400">UV Index</p>
+              <p class="text-2xl font-bold">3</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reccommend -->
+        <div class="bg-gray-800 p-4 rounded-xl space-y-2">
+          <div>
+            <p class="text-gray-400">Reccommend</p>
+            <p class="text-2xl font-bold">It's a great day to be outside!</p>
+            <p>link...</p>
+          </div>
+        </div>
+
+
+      </section>
+    </div>
+
+    <!-- 7 Days Forecast -->
+    <section class="bg-gray-800 p-6 rounded-xl col-span-1 flex flex-col h-full">
+      <h2 class="font-semibold mb-4">7 DAYS FORECAST</h2>
+      <h1>Today</h1>
+      <div class="flex-1 flex flex-col justify-between mt-4">
+        <h1 class="flex justify-between bg-gray-700 p-2 rounded p-4"><span>Tue</span><span class="text-2xl">☀️</span>
+        </h1>
+        <h1 class="flex justify-between p-6"><span>Wed</span><span class="text-2xl">🌤️</span></h1>
+        <h1 class="flex justify-between p-6"><span>Thu</span><span class="text-2xl">☁️</span></h1>
+        <h1 class="flex justify-between p-6"><span>Fri</span><span class="text-2xl">☀️</span></h1>
+        <h1 class="flex justify-between p-6"><span>Sat</span><span class="text-2xl">🌩️</span></h1>
+        <h1 class="flex justify-between p-6"><span>Sun</span><span class="text-2xl">🌧️</span></h1>
+        <h1 class="flex justify-between p-6"><span>Mon</span><span class="text-2xl">🌧️</span></h1>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+
+</html>
